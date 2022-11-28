@@ -1,1 +1,6 @@
-<p>theatre-detail works!</p>
+<h2>Theaters</h2>
+<div *ngIf="theater$ | async as theater">
+  <h3>{{ theater.name }}</h3>
+  <p>Id: {{ theater.id }}</p>
+  <button type="button" (click)="gotoTheaters(theater)">Back</button>
+</div>

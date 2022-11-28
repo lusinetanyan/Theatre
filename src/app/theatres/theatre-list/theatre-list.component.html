@@ -1,1 +1,8 @@
-<p>theatre-list works!</p>
+<h2>Theaters</h2>
+<ul class="theaters">
+  <li *ngFor="let theater of theaters" [class.selected]="theater.id === selectedId">
+    <a routerLink="['/theater', theater.id]">
+      <span class="badge">{{ theater.id }}</span>{{ theater.name }}
+    </a>
+  </li>
+</ul>

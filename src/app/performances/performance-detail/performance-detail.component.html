@@ -1,1 +1,6 @@
-<p>performance-detail works!</p>
+<h2>Performances</h2>
+<div *ngIf="performance$ | async as performance">
+  <h3>{{ performance.title }}</h3>
+  <p>Id: {{ performance.id }}</p>
+  <button type="button" (click)="gotoPerformances(performance)">Back</button>
+</div>

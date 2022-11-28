@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+import {PerformancesService} from "../performances.service";
+import {Performance} from "../performance";
 
 @Component({
   selector: 'app-performance-list',
@@ -6,10 +9,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./performance-list.component.css']
 })
 export class PerformanceListComponent implements OnInit {
+  performances!: Performance[];
+  selectedId = 0;
 
-  constructor() { }
+  constructor(
+    private service: PerformancesService,
+    private route: ActivatedRoute
+  ) {
+  }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.performances = this.service.getPerformances();
+    this.route.paramMap.subscribe(params => {
+      this.selectedId = parseInt(params.get('id')!, 10);
+    });
   }
 
 }
