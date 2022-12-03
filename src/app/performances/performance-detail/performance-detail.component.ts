@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {map, Observable} from "rxjs";
 import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 import {PerformancesService} from "../performances.service";
-import {Performance} from "../performance";
+import {Performance} from "../../performance";
 
 @Component({
   selector: 'app-performance-detail',

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {Theater} from "../theater";
 import {TheatersService} from "../theaters.service";
+import {Theater} from "../../theater";
 
 @Component({
   selector: 'app-theatre-list',

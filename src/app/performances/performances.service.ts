@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
-import {Performance} from "./performance";
-import {PERFORMANCES} from "./mock-performances";
+import {PERFORMANCES} from "../mock";
+import {Performance} from "../performance";
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +14,7 @@ export class PerformancesService {
   }
 
   getPerformance(id: number | string) : Performance | undefined {
-    return this.getPerformances().find(performance => performance.id === +id);
+    return this.getPerformances()?.find(performance => performance.id === +id);
   }
 
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {map, Observable} from "rxjs";
 import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 import {TheatersService} from "../theaters.service";
-import {Theater} from "../theater";
+import {Theater} from "../../theater";
 
 @Component({
   selector: 'app-theatre-detail',

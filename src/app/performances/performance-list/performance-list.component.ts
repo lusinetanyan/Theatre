@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {PerformancesService} from "../performances.service";
-import {Performance} from "../performance";
+import {Performance} from "../../performance";
+
 
 @Component({
   selector: 'app-performance-list',

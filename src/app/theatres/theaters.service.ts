@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
-import {Theater} from "./theater";
-import {THEATERS} from "./mock-theaters";
+import {Theater} from "../theater";
+import {THEATERS} from "../mock";
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +14,7 @@ export class TheatersService {
   }
 
   getTheater(id: number | string) : Theater | undefined {
-    return this.getTheaters().find(theater => theater.id === +id);
+    return this.getTheaters()?.find(theater => theater.id === +id);
   }
 
 }
