@@ -5,7 +5,6 @@ import {PerformanceDetailComponent} from './performance-detail/performance-detai
 import {PerformancesRoutingModule} from "./performances-routing.module";
 import {FormsModule} from "@angular/forms";
 
-
 @NgModule({
   declarations: [
     PerformanceListComponent,
