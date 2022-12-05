@@ -7,15 +7,10 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FormsModule} from "@angular/forms";
 import {TheatersService} from "./theatres/theaters.service";
 import {PerformancesService} from "./performances/performances.service";
-import {PerformanceListComponent} from "./performances/performance-list/performance-list.component";
-import {TheatreListComponent} from "./theatres/theatre-list/theatre-list.component";
-import {TimetableListComponent} from "./timetable/timetable-list/timetable-list.component";
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PerformanceListComponent,
-    TheatreListComponent, TimetableListComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

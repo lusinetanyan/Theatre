@@ -6,7 +6,7 @@ import {TheatreDetailComponent} from "./theatre-detail/theatre-detail.component"
 
 const theatersRoutes: Routes = [
   { path: '',  component: TheatreListComponent},
-  { path: '/:id', component: TheatreDetailComponent}
+  { path: ':id', component: TheatreDetailComponent}
 ];
 
 

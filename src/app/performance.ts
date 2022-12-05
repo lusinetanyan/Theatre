@@ -1,10 +1,12 @@
 import {Theater} from "./theater";
 
 export class Performance {
+
   private _id: number = 0;
   private _title: string = '';
   private _theater: Theater;
   private _numberOfAvailableSeats: number = 0;
+  // private _date : Date = new Date();
 
 
   public constructor(id: number, title: string, theater: Theater, numberOfAvailableSeats: number) {
@@ -12,6 +14,7 @@ export class Performance {
     this._title = title;
     this._theater = theater;
     this._numberOfAvailableSeats = numberOfAvailableSeats;
+    // this._date = date;
   }
 
 
@@ -46,4 +49,12 @@ export class Performance {
   public set numberOfAvailableSeats(value: number) {
     this._numberOfAvailableSeats = value;
   }
+
+  // public get date(): Date {
+  //   return this._date;
+  // }
+  //
+  // public set date(value: Date) {
+  //   this._date = value;
+  // }
 }
