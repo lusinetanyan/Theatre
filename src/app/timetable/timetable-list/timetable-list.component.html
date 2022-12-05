@@ -1,6 +1,8 @@
 <h2>Timetable</h2>
-<li *ngFor="let performance of performances" [class.selected]="performance.id === selectedId">
-  <a routerLink="['/performance', performance.id]">
-    <span class="badge">{{ performance.id }}</span>{{ performance.title }}
-  </a>
-</li>
+<ul class = "timetable">
+  <li *ngFor="let performance of performances" [class.selected]="performance.id === selectedId">
+    <a routerLink="['/performance', performance.id]">
+      <span class="badge">{{ performance.id }}</span>{{ performance.title }}
+    </a>
+  </li>
+</ul>

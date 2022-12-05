@@ -7,14 +7,17 @@ import {TheatreListComponent} from "./theatres/theatre-list/theatre-list.compone
 const routes: Routes = [
   {
     path: 'performances',
+    // loadChildren: () => import('./performances/performances.module').then(m => m.PerformancesModule)
     component: PerformanceListComponent
   },
   {
     path: 'theaters',
+    // loadChildren: () => import('./theatres/theatres.module').then(m => m.TheatresModule)
     component: TheatreListComponent
   },
   {
     path: 'timetable',
+    // loadChildren: () => import('./timetable/timetable.module').then(m => m.TimetableModule)
     component: TimetableListComponent
   },
   { path: '', redirectTo: '/performances', pathMatch: 'full' },
