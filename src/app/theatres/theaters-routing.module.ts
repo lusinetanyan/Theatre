@@ -5,8 +5,8 @@ import {TheatreDetailComponent} from "./theatre-detail/theatre-detail.component"
 
 
 const theatersRoutes: Routes = [
-  { path: 'theaters',  component: TheatreListComponent},
-  { path: 'theater/:id', component: TheatreDetailComponent}
+  { path: '',  component: TheatreListComponent},
+  { path: '/:id', component: TheatreDetailComponent}
 ];
 
 

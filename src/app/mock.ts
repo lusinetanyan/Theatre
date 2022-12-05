@@ -4,7 +4,7 @@ import {Theater} from "./theater";
 export let THEATERS : Theater[] = [];
 
 export const PERFORMANCES: Performance[] = [
-  new Performance(1, 'Արթուրո Ուիի կարիերան որը պետք է կանխվեր', THEATERS[1], 20),
+  new Performance(1, 'Արթուրո Ուիի կարիերան, որը պետք է կանխվեր', THEATERS[1], 20),
   new Performance(2, 'Արծվաբույն', THEATERS[1], 20),
   new Performance(3, 'Պեպո', THEATERS[1], 20),
   new Performance(4, 'Թռիչք կկվի բնի վրայով', THEATERS[1], 20),

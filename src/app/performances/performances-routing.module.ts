@@ -5,8 +5,8 @@ import {PerformanceListComponent} from "./performance-list/performance-list.comp
 
 
 const performancesRoutes: Routes = [
-  { path: 'performances',  component: PerformanceListComponent},
-  { path: 'performances/:id', component: PerformanceDetailComponent}
+  { path: '',  component: PerformanceListComponent},
+  { path: '/:id', component: PerformanceDetailComponent}
 ];
 
 
