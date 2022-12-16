@@ -3,6 +3,7 @@ import {map, Observable} from "rxjs";
 import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 import {PerformancesService} from "../performances.service";
 import {Performance} from "../../performance";
+import {Theater} from "../../theater";
 
 @Component({
   selector: 'app-performance-detail',
@@ -30,4 +31,7 @@ export class PerformanceDetailComponent implements OnInit {
     this.router.navigate(['/performances', { id: performanceId}]);
   }
 
+  onBuy(theater: Performance) {
+
+  }
 }

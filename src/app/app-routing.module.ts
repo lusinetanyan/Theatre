@@ -15,7 +15,7 @@ const routes: Routes = [
   },
   {
     path: 'tickets',
-    component: TicketsListComponent,
+    loadChildren: () => import('./tickets/tickets.module').then(m => m.TicketsModule),
     canLoad: [authGuard]
   },
   {
