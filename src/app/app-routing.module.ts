@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import {TimetableListComponent} from "./timetable/timetable-list/timetable-list.component";
-import {PerformanceListComponent} from "./performances/performance-list/performance-list.component";
-import {TheatreListComponent} from "./theatres/theatre-list/theatre-list.component";
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {authGuard} from "./auth/auth.guard";
+import {TicketsListComponent} from "./tickets/tickets-list/tickets-list.component";
+import {LoginComponent} from "./auth/login/login.component";
 
 const routes: Routes = [
   {
@@ -14,14 +14,20 @@ const routes: Routes = [
     loadChildren: () => import('./theatres/theatres.module').then(m => m.TheatresModule)
   },
   {
-    path: 'timetable',
-    loadChildren: () => import('./timetable/timetable.module').then(m => m.TimetableModule)
+    path: 'tickets',
+    component: TicketsListComponent,
+    canLoad: [authGuard]
   },
-  { path: '', redirectTo: '/performances', pathMatch: 'full' },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {path: '', redirectTo: '/performances', pathMatch: 'full'},
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

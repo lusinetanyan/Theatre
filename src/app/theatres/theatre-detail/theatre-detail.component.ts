@@ -26,6 +26,10 @@ export class TheatreDetailComponent implements OnInit {
     );
   }
 
+  onBuy(theater: Theater) {
+
+  }
+
   gotoTheaters(theater: Theater) {
     const theaterId = theater ? theater.id : null;
     this.router.navigate(['/theaters', { id: theaterId}]);
