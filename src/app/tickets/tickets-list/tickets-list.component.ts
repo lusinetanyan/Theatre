@@ -20,4 +20,13 @@ export class TicketsListComponent implements OnInit {
     this.route.queryParams.pipe(first()).subscribe(param => parseInt(this.selectedId = param['id']));
   }
 
+  onReturn(ticket: Ticket) {
+    ticket.performance.numberOfAvailableSeats++;
+    ticket.count--;
+    if(ticket.count === 0) {
+      const index = TICKETS.findIndex(t => t.id === ticket.id);
+      TICKETS.splice(index, 1);
+      this.tickets = TICKETS;
+    }
+  }
 }
