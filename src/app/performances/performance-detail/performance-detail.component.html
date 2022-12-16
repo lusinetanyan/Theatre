@@ -5,4 +5,5 @@
   <p>Տոմսերի քանակ՝ {{ performance.numberOfAvailableSeats }}</p>
   <button type="button" (click)="goBack(performance)">Back</button>
   <button type="button" (click)="onBuy(performance)">Buy</button>
+  <p *ngIf="performance.numberOfAvailableSeats === 0" class="red">Տոմսերը վերջացած են:</p>
 </div>

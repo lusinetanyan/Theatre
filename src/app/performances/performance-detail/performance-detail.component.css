@@ -2,6 +2,10 @@ button {
   margin-top: 1rem;
 }
 
+.red {
+  color: red;
+}
+
 label {
   display: block;
   margin-bottom: .5rem;

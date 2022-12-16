@@ -12,12 +12,15 @@ export class BuyService {
   }
 
   buy(performance: Performance) {
-    let ticket: Ticket | undefined = TICKETS.find(ticket => ticket.performance == performance);
-    if (ticket) {
-      ticket.count++;
-    } else {
-      TICKETS.push(new Ticket(performance, 1));
+    if (performance.numberOfAvailableSeats === 0) return;
+    else {
+      let ticket: Ticket | undefined = TICKETS.find(ticket => ticket.performance == performance);
+      if (ticket) {
+        ticket.count++;
+      } else {
+        TICKETS.push(new Ticket(performance, 1));
+      }
+      performance.numberOfAvailableSeats--;
     }
-    performance.numberOfAvailableSeats--;
   }
 }
