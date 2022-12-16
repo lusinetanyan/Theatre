@@ -18,5 +18,6 @@ export class BuyService {
     } else {
       TICKETS.push(new Ticket(performance, 1));
     }
+    performance.numberOfAvailableSeats--;
   }
 }

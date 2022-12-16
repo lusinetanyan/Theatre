@@ -1,6 +1,6 @@
 import {Performance} from "./performance";
 
-export class Theater {
+export class Theatre {
 
   private _id: number = 0;
   private _name: string = '';

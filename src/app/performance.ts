@@ -1,18 +1,16 @@
-import {Theater} from "./theater";
+import {Theatre} from "./theatre";
 
 export class Performance {
 
   private _id: number = 0;
   private _title: string = '';
-  private _theater: Theater;
   private _numberOfAvailableSeats: number = 0;
   // private _date : Date = new Date();
 
 
-  public constructor(id: number, title: string, theater: Theater, numberOfAvailableSeats: number) {
+  public constructor(id: number, title: string, numberOfAvailableSeats: number) {
     this._id = id;
     this._title = title;
-    this._theater = theater;
     this._numberOfAvailableSeats = numberOfAvailableSeats;
     // this._date = date;
   }
@@ -32,14 +30,6 @@ export class Performance {
 
   public set title(value: string) {
     this._title = value;
-  }
-
-  public get theater(): Theater {
-    return this._theater;
-  }
-
-  public set theater(value: Theater) {
-    this._theater = value;
   }
 
   public get numberOfAvailableSeats(): number {

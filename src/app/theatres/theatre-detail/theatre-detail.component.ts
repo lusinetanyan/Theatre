@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {map, Observable} from "rxjs";
 import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 import {TheatersService} from "../theaters.service";
-import {Theater} from "../../theater";
+import {Theatre} from "../../theatre";
 
 @Component({
   selector: 'app-theatre-detail',
@@ -11,7 +11,7 @@ import {Theater} from "../../theater";
 })
 
 export class TheatreDetailComponent implements OnInit {
-  theater$!: Observable<Theater | undefined>;
+  theater$!: Observable<Theatre | undefined>;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,11 +26,11 @@ export class TheatreDetailComponent implements OnInit {
     );
   }
 
-  onBuy(theater: Theater) {
+  onBuy(theater: Theatre) {
 
   }
 
-  gotoTheaters(theater: Theater) {
+  gotoTheaters(theater: Theatre) {
     const theaterId = theater ? theater.id : null;
     this.router.navigate(['/theaters', { id: theaterId}]);
   }

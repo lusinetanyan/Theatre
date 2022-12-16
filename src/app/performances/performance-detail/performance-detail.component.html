@@ -1,7 +1,8 @@
 <h2>Performances</h2>
 <div *ngIf="performance$ | async as performance">
   <h3>{{ performance.title }}</h3>
-  <p>Id: {{ performance.id }}</p>
+  <p>Թատրոն՝ {{ performance | findTheatre }}</p>
+  <p>Տոմսերի քանակ՝ {{ performance.numberOfAvailableSeats }}</p>
   <button type="button" (click)="goBack(performance)">Back</button>
   <button type="button" (click)="onBuy(performance)">Buy</button>
 </div>

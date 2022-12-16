@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {TheatersService} from "../theaters.service";
-import {Theater} from "../../theater";
+import {Theatre} from "../../theatre";
 
 @Component({
   selector: 'app-theatre-list',
@@ -9,7 +9,7 @@ import {Theater} from "../../theater";
   styleUrls: ['./theatre-list.component.css']
 })
 export class TheatreListComponent implements OnInit {
-  theaters!: Theater[];
+  theaters!: Theatre[];
   selectedId = 0;
 
   constructor(
