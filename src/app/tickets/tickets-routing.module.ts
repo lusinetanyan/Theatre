@@ -16,4 +16,4 @@ const ticketRout: Routes = [
     RouterModule
   ]
 })
-export class TheatersRoutingModule { }
+export class TicketsRoutingModule { }

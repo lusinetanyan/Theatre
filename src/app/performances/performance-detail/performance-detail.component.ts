@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import {map, Observable} from "rxjs";
-import {ActivatedRoute, ParamMap, Router} from "@angular/router";
+import {Component, OnInit} from '@angular/core';
+import {first, map, observable, Observable} from "rxjs";
+import {ActivatedRoute, NavigationExtras, ParamMap, Router} from "@angular/router";
 import {PerformancesService} from "../performances.service";
 import {Performance} from "../../performance";
-import {Theater} from "../../theater";
+import {BuyService} from "../buy.service";
 
 @Component({
   selector: 'app-performance-detail',
@@ -16,9 +16,10 @@ export class PerformanceDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private service: PerformancesService
-  ) {}
-
+    private service: PerformancesService,
+    private buy: BuyService
+  ) {
+  }
 
   ngOnInit() {
     this.performance$ = this.route.paramMap.pipe(map((params: ParamMap) =>
@@ -26,12 +27,23 @@ export class PerformanceDetailComponent implements OnInit {
     );
   }
 
-  gotoPerformances(performance: Performance) {
+  goBack(performance: Performance) {
     const performanceId = performance ? performance.id : null;
-    this.router.navigate(['/performances', { id: performanceId}]);
+    let from: String = '';
+    this.route.queryParams.pipe(first()).subscribe(param => from = param['from']);
+
+    if (from == "performances") {
+      this.router.navigate(['/performances', {id: performanceId}]);
+    } else if (from == "tickets") {
+      const navigationExtras: NavigationExtras = {
+        queryParams: { id: performanceId }
+      };
+
+      this.router.navigate(['/tickets'], navigationExtras);
+    }
   }
 
-  onBuy(theater: Performance) {
-
+  onBuy(performance: Performance) {
+    this.buy.buy(performance);
   }
 }

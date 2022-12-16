@@ -20,7 +20,7 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginComponent
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
   },
   {path: '', redirectTo: '/performances', pathMatch: 'full'},
 ];

@@ -1,1 +1,9 @@
 <h2>Tickets</h2>
+<ul class="tickets">
+  <li *ngFor="let ticket of tickets" [class.selected]="ticket.performance.id === selectedId">
+    <a [routerLink]="['/performances', ticket.performance.id]" [queryParams]="{from: 'tickets'}">
+      <span class="badge">«{{ ticket.performance.title }}»</span>
+      <p>Քանակ՝ {{ ticket.count }}</p>
+    </a>
+  </li>
+</ul>
