@@ -15,11 +15,11 @@ const routes: Routes = [
   },
   {
     path: 'tickets',
-    component: TicketsListComponent
+    loadChildren: () => import('./tickets/tickets.module').then(m => m.TicketsModule),
   },
   {
     path: 'login',
-    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
+    component: LoginComponent
   },
   {path: '', redirectTo: '/performances', pathMatch: 'full'},
 ];

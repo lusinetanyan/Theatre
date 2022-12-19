@@ -8,7 +8,8 @@ import {BuyService} from "../buy.service";
 @Component({
   selector: 'app-performance-detail',
   templateUrl: './performance-detail.component.html',
-  styleUrls: ['./performance-detail.component.css']
+  styleUrls: ['./performance-detail.component.css'],
+  providers: [BuyService]
 })
 export class PerformanceDetailComponent implements OnInit {
   performance$!: Performance;

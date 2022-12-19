@@ -37,12 +37,4 @@ export class Performance {
   public set numberOfAvailableSeats(value: number) {
     this._numberOfAvailableSeats = value;
   }
-
-  // public get date(): Date {
-  //   return this._date;
-  // }
-  //
-  // public set date(value: Date) {
-  //   this._date = value;
-  // }
 }
