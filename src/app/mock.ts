@@ -20,8 +20,8 @@ export const PERFORMANCES: Performance[] = [
 ]
 
 export let THEATERS : Theatre[] = [
-  new Theatre(1, 'Գ. Սունդուկյանի անվան ազգային ակադեմիական թատրոն', [PERFORMANCES[1], PERFORMANCES[2], PERFORMANCES[3], PERFORMANCES[4], PERFORMANCES[5]]),
-  new Theatre(2, 'Հակոբ Պարոնյանի Անվան Երաժշտական Կոմեդիայի Պետական Թատրոն', [PERFORMANCES[6], PERFORMANCES[7], PERFORMANCES[8], PERFORMANCES[9], PERFORMANCES[10]]),
-  new Theatre(3, 'Երևանի Հրաչյա Ղափլանյանի անվան դրամատիկական թատրոն', [PERFORMANCES[11], PERFORMANCES[12], PERFORMANCES[13], PERFORMANCES[14], PERFORMANCES[15]])
+  new Theatre(1, 'Գ. Սունդուկյանի անվան ազգային ակադեմիական թատրոն', [PERFORMANCES[0], PERFORMANCES[1], PERFORMANCES[2], PERFORMANCES[3], PERFORMANCES[4]]),
+  new Theatre(2, 'Հակոբ Պարոնյանի Անվան Երաժշտական Կոմեդիայի Պետական Թատրոն', [PERFORMANCES[5], PERFORMANCES[6], PERFORMANCES[7], PERFORMANCES[8], PERFORMANCES[9]]),
+  new Theatre(3, 'Երևանի Հրաչյա Ղափլանյանի անվան դրամատիկական թատրոն', [PERFORMANCES[10], PERFORMANCES[11], PERFORMANCES[12], PERFORMANCES[13], PERFORMANCES[14]])
 ]
 

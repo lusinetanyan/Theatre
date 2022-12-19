@@ -3,9 +3,7 @@ import {Performance} from "../performance";
 import {TICKETS} from "../tickets/tickets";
 import {Ticket} from "../tickets/ticket";
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class BuyService {
 
   constructor() {

@@ -2,9 +2,7 @@ import {Injectable} from '@angular/core';
 import {PERFORMANCES} from "../mock";
 import {Performance} from "../performance";
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class PerformancesService {
 
   constructor() { }

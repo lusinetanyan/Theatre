@@ -4,6 +4,7 @@ import {TheatreListComponent} from './theatre-list/theatre-list.component';
 import {TheatreDetailComponent} from './theatre-detail/theatre-detail.component';
 import {TheatersRoutingModule} from "./theaters-routing.module";
 import {FormsModule} from "@angular/forms";
+import {TheatersService} from "./theaters.service";
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import {FormsModule} from "@angular/forms";
     CommonModule,
     FormsModule,
     TheatersRoutingModule
-  ]
+  ],
+  providers: [TheatersService]
 })
 export class TheatresModule {
 }

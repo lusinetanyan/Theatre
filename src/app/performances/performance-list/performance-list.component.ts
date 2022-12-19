@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {PerformancesService} from "../performances.service";
 import {Performance} from "../../performance";
+import {first} from "rxjs";
 
 
 @Component({
@@ -21,7 +22,7 @@ export class PerformanceListComponent implements OnInit {
 
   ngOnInit() {
     this.performances = this.service.getPerformances();
-    this.route.paramMap.subscribe(params => {
+    this.route.paramMap.pipe(first()).subscribe(params => {
       this.selectedId = parseInt(params.get('id')!, 10);
     });
   }

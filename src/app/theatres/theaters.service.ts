@@ -2,9 +2,7 @@ import {Injectable} from '@angular/core';
 import {Theatre} from "../theatre";
 import {THEATERS} from "../mock";
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class TheatersService {
 
   constructor() { }

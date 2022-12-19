@@ -30,17 +30,18 @@ export class PerformanceDetailComponent implements OnInit {
   goBack(performance: Performance) {
     const performanceId = performance ? performance.id : null;
     let from: String = '';
-    this.route.queryParams.pipe(first()).subscribe(param => from = param['from']);
+    this.route.queryParams.pipe(first()).subscribe(param => {
+      from = param['from']
+      if (from == "performances") {
+        this.router.navigate(['/performances', {id: performanceId}]);
+      } else if (from == "tickets") {
+        const navigationExtras: NavigationExtras = {
+          queryParams: { id: performanceId }
+        };
 
-    if (from == "performances") {
-      this.router.navigate(['/performances', {id: performanceId}]);
-    } else if (from == "tickets") {
-      const navigationExtras: NavigationExtras = {
-        queryParams: { id: performanceId }
-      };
-
-      this.router.navigate(['/tickets'], navigationExtras);
-    }
+        this.router.navigate(['/tickets'], navigationExtras);
+      }
+    });
   }
 
   onBuy(performance: Performance) {

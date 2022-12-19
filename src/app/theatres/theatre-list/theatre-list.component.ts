@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {TheatersService} from "../theaters.service";
 import {Theatre} from "../../theatre";
+import {first} from "rxjs";
 
 @Component({
   selector: 'app-theatre-list',
@@ -20,7 +21,7 @@ export class TheatreListComponent implements OnInit {
 
   ngOnInit() {
     this.theaters = this.service.getTheaters();
-    this.route.paramMap.subscribe(params => {
+    this.route.paramMap.pipe(first()).subscribe(params => {
       this.selectedId = parseInt(params.get('id')!, 10);
     });
   }
