@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Theatre} from "../theatre";
-import {THEATERS} from "../mock";
+import {PerformancesService} from "../performances/performances.service";
 
 @Injectable()
 export class TheatersService {
@@ -8,7 +8,7 @@ export class TheatersService {
   constructor() { }
 
   getTheaters(): Theatre[] {
-    return THEATERS;
+    return PerformancesService.THEATERS;
   }
 
   getTheater(id: number | string) : Theatre | undefined {

@@ -1,5 +1,3 @@
-import {Theatre} from "./theatre";
-
 export class Performance {
 
   private _id: number = 0;

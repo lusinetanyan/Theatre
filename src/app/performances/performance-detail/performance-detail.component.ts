@@ -11,7 +11,7 @@ import {BuyService} from "../buy.service";
   styleUrls: ['./performance-detail.component.css']
 })
 export class PerformanceDetailComponent implements OnInit {
-  performance$!: Observable<Performance | undefined>;
+  performance$!: Performance;
 
   constructor(
     private route: ActivatedRoute,
@@ -22,9 +22,10 @@ export class PerformanceDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.performance$ = this.route.paramMap.pipe(map((params: ParamMap) =>
-      this.service.getPerformance(params.get('id')!))
-    );
+    this.route.paramMap.pipe(map((params: ParamMap) => {
+        this.service.getPerformance(params.get('id')!).pipe(first()).subscribe(performance => this.performance$ = performance);
+      }
+    ));
   }
 
   goBack(performance: Performance) {
@@ -36,7 +37,7 @@ export class PerformanceDetailComponent implements OnInit {
         this.router.navigate(['/performances', {id: performanceId}]);
       } else if (from == "tickets") {
         const navigationExtras: NavigationExtras = {
-          queryParams: { id: performanceId }
+          queryParams: {id: performanceId}
         };
 
         this.router.navigate(['/tickets'], navigationExtras);

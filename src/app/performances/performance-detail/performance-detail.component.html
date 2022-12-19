@@ -1,5 +1,5 @@
 <h2>Performances</h2>
-<div *ngIf="performance$ | async as performance">
+<div *ngIf="performance$ as performance">
   <h3>{{ performance.title }}</h3>
   <p>Թատրոն՝ {{ performance | findTheatre }}</p>
   <p>Տոմսերի քանակ՝ {{ performance.numberOfAvailableSeats }}</p>
