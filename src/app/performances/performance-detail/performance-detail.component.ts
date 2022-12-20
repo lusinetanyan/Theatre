@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {first, map, observable, Observable} from "rxjs";
+import {first, map} from "rxjs";
 import {ActivatedRoute, NavigationExtras, ParamMap, Router} from "@angular/router";
 import {PerformancesService} from "../performances.service";
 import {Performance} from "../../performance";
@@ -19,14 +19,14 @@ export class PerformanceDetailComponent implements OnInit {
     private router: Router,
     private service: PerformancesService,
     private buy: BuyService
-  ) {
-  }
+  ) {}
 
   ngOnInit() {
     this.route.paramMap.pipe(map((params: ParamMap) => {
-        this.service.getPerformance(params.get('id')!).pipe(first()).subscribe(performance => this.performance$ = performance);
+        this.service.getPerformance(params.get('id')!).pipe(first()).subscribe(performance =>
+          this.performance$ = new Performance(performance["_id"], performance["_title"], performance["_numberOfAvailableSeats"]));
       }
-    ));
+    )).subscribe();
   }
 
   goBack(performance: Performance) {
